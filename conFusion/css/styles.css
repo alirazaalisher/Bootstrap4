@@ -1,9 +1,7 @@
 .row-header {
   margin: 0px auto;
   padding: 0px 0px; }
-#loginbutton{
-  cursor: pointer;
-}
+
 .row-content {
   margin: 0px auto;
   padding: 50px 0px;
@@ -20,7 +18,9 @@
   padding: 70px 30px;
   background: #9575CD;
   color: floralwhite; }
-
+#loginbutton{
+  cursor: pointer;
+}
 address {
   font-size: 80%;
   margin: 0px;
@@ -41,14 +41,13 @@ body {
 
 .carousel {
   background: #512DA8; }
-.carousel .carousel-item {
-  height: 300px; }
-.carousel .carousel-item img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 300px; 
-}
+  .carousel .carousel-item {
+    height: 300px; }
+    .carousel .carousel-item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-height: 300px; }
 
 #carouselButton {
   right: 0px;
@@ -58,14 +57,9 @@ body {
 
 .modal-header {
   background-color: #5346a4;
-  color: floralwhite; 
-}
-.modal-header button{
-  cursor: pointer;
-}
+  color: floralwhite; }
   .modal-header .close {
-    color: #a896cb; 
-  }
+    color: #a896cb; }
 
 .modal-body {
   background-color: #d1c5e8; }
