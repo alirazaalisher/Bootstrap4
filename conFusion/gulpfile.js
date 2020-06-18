@@ -17,9 +17,8 @@ gulp.task('sass', function () {
 		.pipe(sass().on('error', sass.logError))
 		.pipe(gulp.dest('./css'));
 });
-
 gulp.task('sass:watch', function () {
-	gulp.watch('./css/*.scss', ['sass']);
+	gulp.watch('./css/*.scss', gulp.series('sass'));
 });
 
 gulp.task('browser-sync', function () {
@@ -31,9 +30,7 @@ gulp.task('browser-sync', function () {
 		},
 	});
 });
-
-// Default task
-gulp.task('default', ['browser-sync'], function () {
+gulp.task('default', gulp.series('browser-sync'), function () {
 	gulp.start('sass:watch');
 });
 // Clean
@@ -42,7 +39,7 @@ gulp.task('clean', function () {
 });
 // copyfonts
 gulp.task('copyfonts', function () {
-	gulp
+	return gulp
 		.src('./node_modules/font-awesome/fonts/**/*.{ttf,woff,eof,svg}*')
 		.pipe(gulp.dest('./dist/fonts'));
 });
@@ -77,7 +74,6 @@ gulp.task('usemin', function () {
 		)
 		.pipe(gulp.dest('dist/'));
 });
-
-gulp.task('build', ['clean'], function () {
+gulp.task('build', gulp.series('clean'), function () {
 	gulp.start('copyfonts', 'imagemin', 'usemin');
 });
